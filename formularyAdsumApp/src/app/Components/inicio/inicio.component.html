@@ -1,0 +1,26 @@
+<div class="p-4">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary mb-2" [routerLink]="['/add']">Agregar</button>
+    </div>
+    <p>Lista de tickets</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Nombre Empresa</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ticket of listarTickets">
+            <th>{{ticket.nombre_completo}}</th>
+            <td>{{ticket.nombre_empresa}}</td>
+            <td>{{ticket.categoria}}</td>
+            <td>{{ticket.email}}</td>
+            <td>{{ticket.telefono}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <p class="mt-2 mb-3">Agregar Ticket</p>
+    <form novalidate (ngSubmit)="agregar()" #f="ngForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
+          <input [(ngModel)]="ticket.nombre_completo" name="nombre_completo" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Nombre de empresa</label>
+          <input [(ngModel)]="ticket.nombre_empresa" name="nombre_empresa" type="text" class="form-control" id="exampleInputPassword1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Correo</label>
+            <input [(ngModel)]="ticket.email" type="email" name="email" class="form-control" id="exampleInputPassword1" required>
+          </div>
+          <div class="mb-3 d-flex" style="width: 100%;">
+            <div class="me-2" style="width: 50%;">
+                <label for="exampleInputPassword1" class="form-label">Telefono</label>
+                <input [(ngModel)]="ticket.telefono" name="telefono" type="number" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div style="width: 50%;">
+                <label for="exampleInputPassword1" class="form-label">Categoria</label>
+                <select [(ngModel)]="ticket.categoria" name="categoria" class="form-select" aria-label="Default select example" required>  
+                <option selected>Seleccione una categoria</option>
+                <option *ngFor="let categoria of listarCategorias" value="{{categoria.id}}">{{categoria.categories}}</option>
+            </select>
+        </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mensaje</label>
+            <input [(ngModel)]="ticket.mensaje" name="mensaje" type="text" class="form-control" id="exampleInputPassword1" required>
+          </div>
+        <button type="submit"  [disabled]="f.invalid" class="btn btn-primary float-end">Agregar Ticket</button>
+      </form>
+</div>
